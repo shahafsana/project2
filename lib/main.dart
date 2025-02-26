@@ -45,8 +45,20 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Second Page')),
-      body: const Center(
-        child: Text('Welcome to the Second Page!'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Welcome to the Second Page!'),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context); // Navigate back to HomePage
+              },
+              child: const Text('Back to Home Page'),
+            ),
+          ],
+        ),
       ),
     );
   }
